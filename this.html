@@ -5,6 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    //1.script中或者普通函数中this指代window、
+    function abc(){
+        console.log(this);
+    }
+    abc();
+    //2.事件函数中this指代当前事件对象
+    var bn=document.createElement("button");
+    bn.textContent="按钮";
+    document.body.appendChild(bn);
+    bn.addEventListener("click",clickHandler);
+    function clickHandler(e) {
+        console.log(this);
+    }
+</script>
 </body>
 </html>
